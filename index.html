@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Stone Crusher N.V. | Concrete, steenslag and sand on Bonaire</title>
+<meta name="description" content="Ready-mix concrete, steenslag, sand and cement. Pump, mixer and tipper delivery across Bonaire. Kaya Industria, Kralendijk.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/pump-harbour.webp">
+<style>
+:root{
+  --yellow:#F5B21C; --yellow-deep:#E39A00; --ink:#151412; --ink-2:#2A2825; --cream:#F4ECDF; --paper:#FBF7F0;
+  --line:rgba(21,20,18,.12); --muted:#6B655C; --radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Archivo,system-ui,sans-serif;font-stretch:100%;color:var(--ink);background:var(--paper);line-height:1.5;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{width:min(1200px,100% - 40px);margin-inline:auto}
+.cond{font-stretch:68%;font-weight:850;letter-spacing:-.01em;text-transform:uppercase;line-height:.92}
+
+/* notice */
+.notice{background:var(--ink);color:var(--cream);font-size:14px;text-align:center;padding:9px 16px}
+.notice b{color:var(--yellow);font-weight:700}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(251,247,240,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:20px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand img{height:60px;width:auto}
+.links{display:flex;gap:28px;font-size:15px;font-weight:500}
+.links a{text-decoration:none;opacity:.8}
+.links a:hover{opacity:1}
+.btn{display:inline-flex;align-items:center;gap:10px;border-radius:999px;padding:13px 22px;font-weight:650;font-size:15px;text-decoration:none;border:0;cursor:pointer;transition:transform .2s, background .2s}
+.btn:hover{transform:translateY(-1px)}
+.btn-y{background:var(--yellow);color:var(--ink)}
+.btn-y:hover{background:var(--yellow-deep)}
+.btn-k{background:var(--ink);color:var(--paper)}
+.btn-o{background:transparent;color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.5)}
+.wa{width:18px;height:18px}
+
+/* hero */
+.hero{position:relative;min-height:min(86vh,820px);display:flex;align-items:flex-end;color:#fff;overflow:hidden}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 40%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05) 30%,rgba(10,9,8,.78) 100%)}
+.hero .wrap{position:relative;z-index:1;padding:0 0 64px}
+.hero h1{font-size:clamp(54px,9vw,128px);max-width:11ch}
+.hero h1 span{color:var(--yellow)}
+.hero p{font-size:clamp(17px,1.6vw,20px);max-width:44ch;margin:22px 0 30px;color:rgba(255,255,255,.88)}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px}
+
+/* facts strip */
+.facts{background:var(--yellow)}
+.facts .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.fact{padding:26px 22px;border-left:1px solid rgba(21,20,18,.18)}
+.fact:first-child{border-left:0;padding-left:0}
+.fact strong{display:block;font-size:22px;font-stretch:75%;font-weight:800;text-transform:uppercase}
+.fact span{font-size:14px;color:var(--ink-2)}
+
+section{padding:110px 0}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:48px}
+.head h2{font-size:clamp(44px,6vw,84px);max-width:13ch}
+.head p{max-width:38ch;color:var(--muted);font-size:17px}
+
+/* products */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .25s, transform .25s}
+.card:hover{box-shadow:0 18px 40px -22px rgba(0,0,0,.35);transform:translateY(-2px)}
+.card .ph{aspect-ratio:4/3;overflow:hidden;background:var(--cream)}
+.card .ph img{width:100%;height:100%;object-fit:cover}
+.card .bd{padding:22px 22px 24px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card h3{font-size:30px}
+.card p{color:var(--muted);font-size:15px}
+.card .row{margin-top:auto;padding-top:14px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line)}
+.price{font-weight:700;font-size:15px}
+.price small{display:block;font-weight:400;color:var(--muted);font-size:12px}
+.ask{font-size:14px;font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--yellow)}
+.card.dark{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.card.dark p,.card.dark .price small{color:rgba(251,247,240,.65)}
+.card.dark .row{border-color:rgba(255,255,255,.12)}
+.mini{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+.mini div{border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;background:#fff}
+.mini h4{font-size:24px}
+.mini p{color:var(--muted);font-size:14px;margin-top:4px}
+
+/* calculator */
+.calc{background:var(--ink);color:var(--paper)}
+.calc .inner{display:grid;grid-template-columns:1.05fr 1fr;gap:60px;align-items:center}
+.calc h2{font-size:clamp(44px,6vw,84px)}
+.calc .lead{color:rgba(251,247,240,.7);font-size:17px;margin:18px 0 0;max-width:40ch}
+.panel{background:var(--ink-2);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:30px}
+.seg{display:flex;background:rgba(255,255,255,.06);border-radius:999px;padding:4px;margin-bottom:24px}
+.seg button{flex:1;border:0;background:transparent;color:rgba(251,247,240,.7);font:inherit;font-size:14px;font-weight:600;padding:10px;border-radius:999px;cursor:pointer}
+.seg button.on{background:var(--yellow);color:var(--ink)}
+.fields{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+label{font-size:13px;color:rgba(251,247,240,.65);display:flex;flex-direction:column;gap:6px}
+input{font:inherit;font-size:22px;font-weight:600;color:var(--paper);background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:12px 14px;width:100%}
+input:focus{outline:2px solid var(--yellow);outline-offset:1px}
+.result{margin:26px 0 22px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1);display:flex;align-items:baseline;justify-content:space-between;gap:16px}
+.result .big{font-size:clamp(56px,7vw,84px);font-stretch:70%;font-weight:850;color:var(--yellow);line-height:1}
+.result .note{font-size:13px;color:rgba(251,247,240,.6);text-align:right;max-width:24ch}
+.panel .btn{width:100%;justify-content:center}
+
+/* photo band */
+.band{display:grid;grid-template-columns:1.4fr 1fr;min-height:620px}
+.band .img{position:relative;overflow:hidden}
+.band .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.band .txt{background:var(--cream);padding:80px 60px;display:flex;flex-direction:column;justify-content:center;gap:22px}
+.band h2{font-size:clamp(40px,5vw,72px)}
+.band p{color:var(--ink-2);font-size:17px;max-width:40ch}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
+.step{padding:34px 30px 10px 0}
+.step+.step{padding-left:30px;border-left:1px solid var(--line)}
+.step h3{font-size:34px;margin-bottom:10px}
+.step p{color:var(--muted)}
+
+/* team */
+.team{position:relative;color:#fff;overflow:hidden;min-height:640px;display:flex;align-items:flex-end}
+.team img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%}
+.team::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(10,9,8,.82))}
+.team .wrap{position:relative;z-index:1;padding-bottom:56px;display:flex;justify-content:space-between;align-items:flex-end;gap:30px}
+.team h2{font-size:clamp(46px,7vw,100px);max-width:12ch}
+.team p{max-width:34ch;color:rgba(255,255,255,.85);font-size:17px}
+
+/* contact */
+.contact .inner{display:grid;grid-template-columns:1fr 1.1fr;gap:50px}
+.contact h2{font-size:clamp(44px,6vw,84px);margin-bottom:30px}
+.lines{border-top:1px solid var(--line)}
+.lines a,.lines div{display:flex;justify-content:space-between;gap:20px;padding:20px 0;border-bottom:1px solid var(--line);text-decoration:none;font-size:18px}
+.lines span{color:var(--muted);font-size:15px}
+.map{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);min-height:420px}
+.map iframe{width:100%;height:100%;min-height:420px;border:0;filter:grayscale(.3)}
+
+footer{background:var(--ink);color:rgba(251,247,240,.6);padding:60px 0 40px;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
+footer .motto{font-size:clamp(40px,6vw,80px);color:var(--paper)}
+footer .motto span{color:var(--yellow)}
+
+.float-wa{position:fixed;right:18px;bottom:18px;z-index:30;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 10px 30px -8px rgba(0,0,0,.4)}
+.float-wa svg{width:28px;height:28px;fill:#fff}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease, transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+@media (max-width:960px){
+  .links{display:none}
+  .grid,.mini{grid-template-columns:1fr 1fr}
+  .calc .inner,.contact .inner,.band{grid-template-columns:1fr}
+  .band .img{min-height:360px}
+  .band .txt{padding:56px 24px}
+  .head{flex-direction:column;align-items:flex-start}
+  .facts .wrap{grid-template-columns:1fr 1fr}
+  .fact:nth-child(3){border-left:0;padding-left:0}
+  .fact{border-top:1px solid rgba(21,20,18,.18)}
+  .fact:nth-child(-n+2){border-top:0}
+  .team .wrap{flex-direction:column;align-items:flex-start}
+}
+@media (max-width:620px){
+  .wrap{width:calc(100% - 32px)}
+  section{padding:76px 0}
+  .grid,.mini,.steps{grid-template-columns:1fr}
+  .step,.step+.step{padding:26px 0 6px;border-left:0}
+  .step+.step{border-top:1px solid var(--line)}
+  .fields{grid-template-columns:1fr 1fr}
+  .fields label:last-child{grid-column:span 2}
+  .nav .btn{padding:11px 16px;font-size:14px}
+  .nav .btn .t{display:none}
+  .brand img{height:44px}
+  .hero{min-height:min(88svh,760px)}
+  .result{flex-direction:column;align-items:flex-start}
+  .result .note{text-align:left}
+}
+</style>
+</head>
+<body>
+
+<div class="notice">Holiday break coming. <b>Last orders December 11</b>, so every delivery lands before we close.</div>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Stone Crusher N.V. home"><img src="img/logo.png" alt="Stone Crusher N.V." width="360" height="325"></a>
+    <nav class="links">
+      <a href="#products">Products</a>
+      <a href="#calculator">Calculator</a>
+      <a href="#services">Pump and delivery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-y" href="#" data-wa="Hi Stone Crusher, I'd like to order."><svg class="wa" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z" fill="currentColor"/></svg><span class="t">Order on</span> WhatsApp</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" style="padding:0">
+    <img src="img/pump-harbour.webp" alt="Stone Crusher concrete pump truck on the Kralendijk waterfront" fetchpriority="high">
+    <div class="wrap">
+      <h1 class="cond">Concrete poured. <span>Stone delivered.</span></h1>
+      <p>Ready-mix concrete, steenslag, sand and cement from Kaya Industria. Pumped, poured or tipped anywhere on Bonaire.</p>
+      <div class="ctas">
+        <a class="btn btn-y" href="#calculator">Work out your m³</a>
+        <a class="btn btn-o" href="#products">See products and prices</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="facts">
+    <div class="wrap">
+      <div class="fact"><strong>Own plant</strong><span>Kaya Industria, Kralendijk</span></div>
+      <div class="fact"><strong>Concrete pump</strong><span>Putzmeister boom on a Mercedes Arocs</span></div>
+      <div class="fact"><strong>Mixers and tippers</strong><span>Delivery island-wide</span></div>
+      <div class="fact"><strong>One call</strong><span>717 8728 or WhatsApp</span></div>
+    </div>
+  </div>
+
+  <section id="products">
+    <div class="wrap">
+      <div class="head reveal">
+        <h2 class="cond">Everything a build eats.</h2>
+        <p>Prices change with every shipment. Ask for today's price and we confirm it before we load.</p>
+      </div>
+      <div class="grid">
+        <article class="card dark reveal">
+          <div class="ph"><img src="img/aggregate-pour.webp" alt="Aggregate pouring at the Stone Crusher plant" loading="lazy"></div>
+          <div class="bd">
+            <h3 class="cond">Ready-mix concrete</h3>
+            <p>C20/25 and up, mixed at our plant and delivered by mixer truck. Floors, foundations, columns, roofs.</p>
+            <div class="row"><div class="price">From $230 / m³<small>C20/25, September special</small></div><a class="ask" href="#" data-wa="Hi, what is today's price for ready-mix concrete?">Ask price</a></div>
+          </div>
+        </article>
+        <article class="card reveal">
+          <div class="ph"><img src="img/curacao3.webp" alt="Steenslag Curaçao #3, light crushed limestone" loading="lazy"></div>
+          <div class="bd">
+            <h3 class="cond">Steenslag Curaçao #3</h3>
+            <p>Light crushed stone for concrete mixing, drainage and driveways.</p>
+            <div class="row"><div class="price">Per m³<small>Pickup or tipper delivery</small></div><a class="ask" href="#" data-wa="Hi, what is today's price for steenslag Curaçao #3?">Ask price</a></div>
+          </div>
+        </article>
+        <article class="card reveal">
+          <div class="ph"><img src="img/stodomingo.webp" alt="Steenslag Santo Domingo, grey crushed stone" loading="lazy"></div>
+          <div class="bd">
+            <h3 class="cond">Steenslag Sto. Domingo</h3>
+            <p>Hard grey stone. The go-to for structural concrete and base layers.</p>
+            <div class="row"><div class="price">Per m³<small>Pickup or tipper delivery</small></div><a class="ask" href="#" data-wa="Hi, what is today's price for steenslag Sto. Domingo?">Ask price</a></div>
+          </div>
+        </article>
+      </div>
+      <div class="mini">
+        <div class="reveal"><h4 class="cond">Sand</h4><p>For masonry, plaster and mixing.</p></div>
+        <div class="reveal"><h4 class="cond">Grey gravel</h4><p>Back in stock. Ask for the size you need.</p></div>
+        <div class="reveal"><h4 class="cond">Portland cement</h4><p>Argos bags, single or by the pallet.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="calculator" class="calc">
+    <div class="wrap inner">
+      <div class="reveal">
+        <h2 class="cond">How much do you need?</h2>
+        <p class="lead">Measure the slab, type it in, and send the number straight to us. We add a little extra so the pour never runs short.</p>
+      </div>
+      <div class="panel reveal">
+        <div class="seg" role="tablist">
+          <button class="on" data-mat="Ready-mix concrete">Concrete</button>
+          <button data-mat="Steenslag">Steenslag</button>
+          <button data-mat="Sand">Sand</button>
+        </div>
+        <div class="fields">
+          <label>Length (m)<input id="L" type="number" inputmode="decimal" min="0" step="0.1" value="8"></label>
+          <label>Width (m)<input id="W" type="number" inputmode="decimal" min="0" step="0.1" value="6"></label>
+          <label>Thickness (cm)<input id="T" type="number" inputmode="decimal" min="0" step="1" value="12"></label>
+        </div>
+        <div class="result">
+          <div class="big"><span id="out">6.0</span> m³</div>
+          <div class="note" id="note">Includes 5% extra, rounded up to the next half m³.</div>
+        </div>
+        <a class="btn btn-y" href="#" id="send"><svg class="wa" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Z" fill="currentColor"/></svg>Send this order on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" style="padding:0">
+    <div class="band">
+      <div class="img"><img src="img/truck-dusk.webp" alt="Stone Crusher Mercedes mixer truck at dusk" loading="lazy" style="object-position:50% 70%"></div>
+      <div class="txt reveal">
+        <h2 class="cond">Pumped where the wheelbarrow can't go.</h2>
+        <p>Our boom pump reaches over walls, roofs and tight lots. Mixer trucks keep it fed, so a whole floor goes in one pour.</p>
+        <div><a class="btn btn-k" href="#" data-wa="Hi, I'd like to book the concrete pump.">Book the pump</a></div>
+      </div>
+    </div>
+    <div class="band">
+      <div class="txt reveal">
+        <h2 class="cond">Tipped, dug and cleared.</h2>
+        <p>Tipper trucks drop stone and fill right where you need it. Excavators clear the terrain before the first block goes down.</p>
+        <div><a class="btn btn-k" href="#" data-wa="Hi, I need excavation or terrain cleaning.">Plan a site job</a></div>
+      </div>
+      <div class="img"><img src="img/tipper.webp" alt="Stone Crusher tipper truck unloading steenslag on a Bonaire site" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="head reveal"><h2 class="cond">Ordering takes one message.</h2></div>
+      <div class="steps">
+        <div class="step reveal"><h3 class="cond">Tell us what and where</h3><p>Product, amount and the site address. A pin on WhatsApp works.</p></div>
+        <div class="step reveal"><h3 class="cond">Get the price and a slot</h3><p>We confirm the price and the delivery time.</p></div>
+        <div class="step reveal"><h3 class="cond">We bring it</h3><p>Mixer, pump or tipper arrives at your site, ready to work.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="team" style="padding:0">
+    <img src="img/team.webp" alt="The Stone Crusher crew in front of a CAT backhoe" loading="lazy">
+    <div class="wrap">
+      <h2 class="cond">Bonaire builds with this crew.</h2>
+      <p>Drivers, operators, plant staff and the office. Every load you order passes through these hands.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap inner">
+      <div class="reveal">
+        <h2 class="cond">Come by or call.</h2>
+        <div class="lines">
+          <a href="tel:+5997178728">717 8728<span>Call the office</span></a>
+          <a href="#" data-wa="Hi Stone Crusher!">WhatsApp<span>Fastest for orders</span></a>
+          <a href="mailto:info@stonecrushernv.com">info@stonecrushernv.com<span>Quotes and invoices</span></a>
+          <div>Kaya Industria Suite 6<span>Kralendijk, Bonaire</span></div>
+        </div>
+      </div>
+      <div class="map reveal">
+        <iframe title="Map to Stone Crusher N.V." loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Kaya+Industria,+Kralendijk,+Bonaire&output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="motto cond">Work smarter.<br><span>Not harder.</span></div>
+    <div>Stone Crusher N.V. · Kralendijk, Bonaire<br>Design preview by Salty Code Studio</div>
+  </div>
+</footer>
+
+<a class="float-wa" href="#" data-wa="Hi Stone Crusher!" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg></a>
+
+<script>
+const WA = '5997178728';
+const wa = msg => `https://wa.me/${WA}?text=${encodeURIComponent(msg)}`;
+document.querySelectorAll('[data-wa]').forEach(a => { a.href = wa(a.dataset.wa); a.target = '_blank'; a.rel = 'noopener'; });
+
+let mat = 'Ready-mix concrete';
+const $ = id => document.getElementById(id);
+function calc(){
+  const L = parseFloat($('L').value)||0, W = parseFloat($('W').value)||0, T = parseFloat($('T').value)||0;
+  const raw = L*W*(T/100), m3 = raw > 0 ? Math.ceil(raw*1.05*2)/2 : 0;
+  $('out').textContent = m3.toFixed(1);
+  const send = $('send');
+  send.href = wa(`Hi Stone Crusher, I'd like ${m3.toFixed(1)} m³ of ${mat.toLowerCase()} (${L} x ${W} m, ${T} cm thick). Delivery address: `);
+  send.target = '_blank'; send.rel = 'noopener';
+}
+['L','W','T'].forEach(id => $(id).addEventListener('input', calc));
+document.querySelectorAll('.seg button').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('.seg button').forEach(x => x.classList.toggle('on', x === b));
+  mat = b.dataset.mat; calc();
+}));
+calc();
+
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold:.12});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
