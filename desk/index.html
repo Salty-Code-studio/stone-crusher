@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Stone Crusher N.V. | Order concrete, steenslag and sand on Bonaire</title>
+<meta name="description" content="Today's prices, free pump dates and one-message ordering. Ready-mix concrete, steenslag, sand and cement from Kaya Industria, Kralendijk.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/pump-harbour.webp">
+<style>
+:root{
+  --yellow:#F5B21C; --yellow-deep:#E39A00; --ink:#151412; --ink-2:#2A2825; --cream:#F4ECDF; --paper:#FBF7F0;
+  --line:rgba(21,20,18,.12); --muted:#6B655C; --radius:14px; --green:#2F8F4E; --red:#C2412D; --amber:#C77A00;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:120px}
+body{font-family:Archivo,system-ui,sans-serif;font-stretch:100%;color:var(--ink);background:var(--paper);line-height:1.5;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+.wrap{width:min(1200px,100% - 32px);margin-inline:auto}
+.cond{font-stretch:68%;font-weight:850;letter-spacing:-.01em;text-transform:uppercase;line-height:.92}
+
+/* status bar */
+.status{background:var(--ink);color:var(--cream);font-size:14px}
+.status .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:42px;flex-wrap:wrap;padding:6px 0}
+.st-l{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(47,143,78,.25);flex:none}
+.status[data-mode="early"] .dot{background:var(--yellow);box-shadow:0 0 0 4px rgba(245,178,28,.25)}
+.status[data-mode="closed"] .dot,.status[data-mode="holiday"] .dot{background:var(--red);box-shadow:0 0 0 4px rgba(194,65,45,.3)}
+.st-mode{font-weight:700}
+.st-note{opacity:.8}
+.st-cut b{color:var(--yellow);font-weight:700}
+.langs{display:flex;gap:2px;background:rgba(255,255,255,.08);border-radius:999px;padding:3px}
+.langs button{border:0;background:transparent;border-radius:999px;padding:4px 10px;font-size:13px;font-weight:600;cursor:pointer;opacity:.7}
+.langs button[aria-pressed="true"]{background:var(--yellow);color:var(--ink);opacity:1}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(251,247,240,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:20px}
+.brand img{height:56px;width:auto}
+.links{display:flex;gap:28px;font-size:15px;font-weight:500}
+.links a{text-decoration:none;opacity:.8}
+.links a:hover{opacity:1}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:999px;padding:13px 22px;font-weight:650;font-size:15px;text-decoration:none;border:0;cursor:pointer;transition:transform .2s,background .2s,opacity .2s}
+.btn:hover{transform:translateY(-1px)}
+.btn-y{background:var(--yellow);color:var(--ink)}
+.btn-y:hover{background:var(--yellow-deep)}
+.btn-k{background:var(--ink);color:var(--paper)}
+.btn-o{background:transparent;color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.55)}
+.btn[disabled]{opacity:.45;cursor:not-allowed;transform:none}
+.wa{width:18px;height:18px}
+
+/* hero */
+.hero{position:relative;min-height:min(84vh,780px);display:flex;align-items:flex-end;color:#fff;overflow:hidden}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 40%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.08) 25%,rgba(10,9,8,.82) 100%)}
+.hero .wrap{position:relative;z-index:1;padding:0 0 56px;display:grid;grid-template-columns:1fr 340px;gap:40px;align-items:end}
+.hero h1{font-size:clamp(52px,8.4vw,118px);max-width:11ch}
+.hero p{font-size:clamp(17px,1.6vw,20px);max-width:46ch;margin:22px 0 30px;color:rgba(255,255,255,.9)}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+.today{background:rgba(21,20,18,.72);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);padding:22px}
+.today h2{font-size:26px;margin-bottom:14px;color:var(--yellow)}
+.today dl{display:grid;gap:12px}
+.today div{display:flex;justify-content:space-between;gap:12px;border-top:1px solid rgba(255,255,255,.12);padding-top:12px;font-size:15px}
+.today dt{opacity:.75}
+.today dd{font-weight:700;text-align:right}
+
+section{padding:104px 0}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:44px}
+.head h2{font-size:clamp(44px,6vw,84px);max-width:13ch}
+.head p{max-width:40ch;color:var(--muted);font-size:17px}
+
+/* prices */
+.prices{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.pc{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .25s,transform .25s}
+.pc:hover{box-shadow:0 18px 40px -24px rgba(0,0,0,.35);transform:translateY(-2px)}
+.pc .ph{aspect-ratio:4/3;background:var(--cream) center/cover no-repeat;position:relative}
+.pc .ph.none{background:linear-gradient(135deg,#E8DCC8,#D6C6AC)}
+.pc .ph.none::after{content:attr(data-k);position:absolute;inset:auto 16px 12px;font-stretch:68%;font-weight:850;text-transform:uppercase;font-size:44px;color:rgba(21,20,18,.14);line-height:1}
+.tag{position:absolute;top:12px;left:12px;background:var(--yellow);color:var(--ink);font-weight:700;font-size:13px;border-radius:999px;padding:4px 11px}
+.pc .bd{padding:18px 18px 18px;display:flex;flex-direction:column;gap:10px;flex:1}
+.pc h3{font-size:26px}
+.pc .row{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.amt{font-weight:800;font-size:22px;font-stretch:80%}
+.amt small{display:block;font-weight:400;color:var(--muted);font-size:12px;font-stretch:100%}
+.amt.ask{font-size:16px;font-weight:600;color:var(--muted)}
+.pc .btn{padding:10px 16px;font-size:14px}
+.upd{margin-top:18px;color:var(--muted);font-size:14px}
+
+/* order desk */
+#order{background:var(--cream)}
+.desk{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:start}
+.step{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;margin-bottom:16px}
+.step h3{font-size:30px;margin-bottom:16px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:10px 16px;font-weight:600;font-size:15px;cursor:pointer;transition:background .15s,border-color .15s}
+.chip:hover{border-color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.qty{display:flex;align-items:center;gap:10px}
+.qty button{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:var(--paper);font-size:22px;cursor:pointer}
+.qty input{width:110px;height:46px;border:1px solid var(--line);border-radius:12px;text-align:center;font-size:20px;font-weight:700;background:#fff}
+.qty .u{color:var(--muted);font-weight:600}
+.calc{margin-top:18px;border-top:1px dashed var(--line);padding-top:16px}
+.calc summary{cursor:pointer;font-weight:600;list-style:none;display:flex;align-items:center;gap:8px}
+.calc summary::before{content:"+";display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--yellow);font-weight:800}
+.calc[open] summary::before{content:"\2212"}
+.cgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+label.f{display:flex;flex-direction:column;gap:6px;font-size:14px;color:var(--muted);font-weight:500}
+label.f input,label.f select,label.f textarea{border:1px solid var(--line);border-radius:10px;padding:12px;background:#fff;color:var(--ink);font-size:16px;width:100%}
+label.f textarea{min-height:76px;resize:vertical}
+.hint{font-size:13px;color:var(--muted);margin-top:10px}
+.cal-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.cal-top strong{font-size:18px;text-transform:capitalize}
+.cal-top button{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--paper);cursor:pointer;font-size:18px}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.cal .dn{font-size:12px;color:var(--muted);text-align:center;text-transform:capitalize;padding-bottom:4px}
+.cal button{aspect-ratio:1;border-radius:10px;border:1px solid var(--line);background:#fff;font-weight:600;font-size:15px;cursor:pointer;position:relative}
+.cal button::after{content:"";position:absolute;left:50%;bottom:6px;width:6px;height:6px;margin-left:-3px;border-radius:50%;background:var(--green)}
+.cal button.pump::after{background:var(--amber)}
+.cal button.closed,.cal button.past{background:transparent;color:rgba(21,20,18,.3);cursor:not-allowed}
+.cal button.closed::after,.cal button.past::after{display:none}
+.cal button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-top:12px}
+.legend i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;background:var(--green)}
+.legend .lp i{background:var(--amber)}
+.legend .lc i{background:rgba(21,20,18,.25)}
+.pumpopt{display:flex;align-items:center;gap:12px;margin-top:16px;padding:14px;border:1px solid var(--line);border-radius:12px;cursor:pointer}
+.pumpopt input{width:20px;height:20px;accent-color:var(--ink)}
+.warn{color:var(--red);font-size:14px;margin-top:8px}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.fgrid .full{grid-column:1/-1}
+.sum{position:sticky;top:96px;background:var(--ink);color:var(--paper);border-radius:var(--radius);padding:24px}
+.sum h3{font-size:30px;color:var(--yellow);margin-bottom:14px}
+.sum dl div{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-top:1px solid rgba(255,255,255,.12);font-size:15px}
+.sum dt{opacity:.7}
+.sum dd{font-weight:600;text-align:right}
+.est{margin:18px 0;padding:16px;border-radius:12px;background:rgba(255,255,255,.07)}
+.est strong{display:block;font-size:34px;font-stretch:75%;font-weight:850}
+.est small{opacity:.7;font-size:13px}
+.sum .btn{width:100%}
+.sum .msg{font-size:14px;margin-top:12px;opacity:.85;min-height:20px}
+
+/* guide */
+.guide{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.guide td{padding:18px 22px;border-top:1px solid var(--line);font-size:17px;vertical-align:middle}
+.guide tr:first-child td{border-top:0}
+.guide td:first-child{width:170px;font-stretch:72%;font-weight:850;font-size:28px}
+.guide .on td:first-child{color:var(--yellow-deep)}
+.guide td:last-child{text-align:right}
+.gnote{margin-top:14px;color:var(--muted);font-size:15px}
+
+/* area + crew */
+.split{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center}
+.split img{border-radius:var(--radius);width:100%;aspect-ratio:4/3;object-fit:cover}
+.split h2{font-size:clamp(42px,5.4vw,76px);margin-bottom:18px}
+.split p{color:var(--muted);font-size:18px;max-width:42ch}
+.areas{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.areas span{border:1px solid var(--line);border-radius:999px;padding:6px 13px;font-size:14px;background:#fff}
+.crew{position:relative;color:#fff;padding:0}
+.crew img{width:100%;height:min(80vh,720px);object-fit:cover;object-position:center 35%}
+.crew::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(10,9,8,.8))}
+.crew .wrap{position:absolute;left:0;right:0;bottom:48px;z-index:1}
+.crew h2{font-size:clamp(44px,6.4vw,92px);max-width:14ch}
+.crew p{max-width:46ch;margin-top:14px;font-size:18px;color:rgba(255,255,255,.88)}
+
+/* contact */
+.contact{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.cc{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;text-decoration:none;display:flex;flex-direction:column;gap:6px;transition:border-color .2s}
+.cc:hover{border-color:var(--ink)}
+.cc strong{font-size:22px;font-stretch:80%;font-weight:800}
+.cc span{color:var(--muted);font-size:15px}
+.map{margin-top:16px;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);height:320px}
+.map iframe{width:100%;height:100%;border:0;filter:grayscale(.3)}
+
+footer{background:var(--ink);color:rgba(244,236,223,.75);padding:48px 0;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+footer img{height:54px;filter:none}
+footer .motto{font-stretch:68%;font-weight:850;text-transform:uppercase;font-size:28px;color:var(--yellow)}
+footer a{color:var(--cream)}
+
+@media (max-width:960px){
+  .hero .wrap{grid-template-columns:1fr}
+  .today{max-width:420px}
+  .desk{grid-template-columns:1fr}
+  .sum{position:static}
+  .split{grid-template-columns:1fr;gap:28px}
+  .head{flex-direction:column;align-items:flex-start}
+  .contact{grid-template-columns:1fr}
+}
+@media (max-width:720px){
+  .links{display:none}
+  .nav{height:64px}
+  .brand img{height:46px}
+  section{padding:72px 0}
+  .cgrid,.fgrid{grid-template-columns:1fr}
+  .fgrid .full{grid-column:auto}
+  .guide td{padding:14px}
+  .guide td:first-child{width:auto;font-size:22px}
+  .guide td:last-child{display:none}
+  .step{padding:18px}
+  .nav .btn{padding:10px 16px}
+  .st-cut,.st-note{display:none}
+  .status .wrap{flex-wrap:nowrap}
+  .langs button{padding:4px 8px;font-size:12px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<div class="status" id="status" data-mode="open">
+  <div class="wrap">
+    <div class="st-l"><span class="dot"></span><span class="st-mode" id="stMode"></span><span class="st-note" id="stNote"></span><span class="st-cut" id="stCut"></span></div>
+    <div class="langs" id="langs"></div>
+  </div>
+</div>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Stone Crusher N.V."><img src="img/logo.png" alt="Stone Crusher N.V." width="120" height="56"></a>
+    <nav class="links">
+      <a href="#prices" data-i="nav.prices"></a>
+      <a href="#order" data-i="nav.order"></a>
+      <a href="#guide" data-i="nav.guide"></a>
+      <a href="#contact" data-i="nav.contact"></a>
+    </nav>
+    <a class="btn btn-y" href="#order" data-i="cta.order"></a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" style="padding:0">
+    <img src="img/pump-harbour.webp" alt="Stone Crusher concrete pump on the Kralendijk waterfront" fetchpriority="high">
+    <div class="wrap">
+      <div>
+        <h1 class="cond" data-i="hero.h1"></h1>
+        <p data-i="hero.p"></p>
+        <div class="ctas">
+          <a class="btn btn-y" href="#order" data-i="hero.c1"></a>
+          <a class="btn btn-o" href="#prices" data-i="hero.c2"></a>
+        </div>
+      </div>
+      <aside class="today">
+        <h2 class="cond" data-i="today.t"></h2>
+        <dl>
+          <div><dt data-i="today.pump"></dt><dd id="tdPump"></dd></div>
+          <div><dt data-i="today.upd"></dt><dd id="tdUpd"></dd></div>
+          <div><dt data-i="today.cut"></dt><dd id="tdCut"></dd></div>
+        </dl>
+      </aside>
+    </div>
+  </section>
+
+  <section id="prices">
+    <div class="wrap">
+      <div class="head"><h2 class="cond" data-i="pr.h"></h2><p data-i="pr.p"></p></div>
+      <div class="prices" id="priceGrid"></div>
+      <p class="upd" id="prUpd"></p>
+    </div>
+  </section>
+
+  <section id="order">
+    <div class="wrap">
+      <div class="head"><h2 class="cond" data-i="or.h"></h2><p data-i="or.p"></p></div>
+      <div class="desk">
+        <form id="orderForm" novalidate>
+          <div class="step">
+            <h3 class="cond" data-i="or.what"></h3>
+            <div class="chips" id="prodChips"></div>
+          </div>
+          <div class="step">
+            <h3 class="cond" data-i="or.how"></h3>
+            <div class="qty">
+              <button type="button" id="qMinus" aria-label="Less">&minus;</button>
+              <input id="qty" type="number" inputmode="decimal" min="0" step="0.5" value="" aria-label="Quantity">
+              <button type="button" id="qPlus" aria-label="More">+</button>
+              <span class="u" id="qUnit"></span>
+            </div>
+            <details class="calc" id="calc">
+              <summary data-i="or.calcT"></summary>
+              <div class="cgrid">
+                <label class="f"><span data-i="or.L"></span><input id="cL" type="number" inputmode="decimal" min="0" step="0.1"></label>
+                <label class="f"><span data-i="or.W"></span><input id="cW" type="number" inputmode="decimal" min="0" step="0.1"></label>
+                <label class="f"><span data-i="or.T"></span><input id="cT" type="number" inputmode="decimal" min="0" step="1" value="10"></label>
+              </div>
+              <p class="hint" data-i="or.extra"></p>
+            </details>
+          </div>
+          <div class="step">
+            <h3 class="cond" data-i="or.when"></h3>
+            <div class="cal-top"><button type="button" id="calPrev" aria-label="Previous month">&lsaquo;</button><strong id="calMonth"></strong><button type="button" id="calNext" aria-label="Next month">&rsaquo;</button></div>
+            <div class="cal" id="cal"></div>
+            <div class="legend"><span><i></i><span data-i="or.free"></span></span><span class="lp"><i></i><span data-i="or.pumpb"></span></span><span class="lc"><i></i><span data-i="or.closed"></span></span></div>
+            <label class="pumpopt" id="pumpRow"><input type="checkbox" id="pump"><span data-i="or.pump"></span></label>
+            <p class="warn" id="pumpWarn" hidden data-i="or.pumpBusy"></p>
+          </div>
+          <div class="step">
+            <h3 class="cond" data-i="or.where"></h3>
+            <div class="fgrid">
+              <label class="f"><span data-i="or.area"></span><select id="area"></select></label>
+              <label class="f"><span data-i="or.phone"></span><input id="phone" type="tel" autocomplete="tel"></label>
+              <label class="f full"><span data-i="or.addr"></span><input id="addr" autocomplete="street-address"></label>
+              <label class="f full"><span data-i="or.name"></span><input id="name" autocomplete="name"></label>
+              <label class="f full"><span data-i="or.note"></span><textarea id="note"></textarea></label>
+            </div>
+          </div>
+        </form>
+
+        <aside class="sum" aria-live="polite">
+          <h3 class="cond" data-i="su.t"></h3>
+          <dl>
+            <div><dt data-i="su.prod"></dt><dd id="sProd">&ndash;</dd></div>
+            <div><dt data-i="su.qty"></dt><dd id="sQty">&ndash;</dd></div>
+            <div><dt data-i="su.date"></dt><dd id="sDate">&ndash;</dd></div>
+            <div id="sPumpRow"><dt data-i="su.pump"></dt><dd id="sPump">&ndash;</dd></div>
+            <div><dt data-i="su.area"></dt><dd id="sArea">&ndash;</dd></div>
+          </dl>
+          <div class="est"><small data-i="su.est"></small><strong id="sEst">&ndash;</strong><small id="sEstN"></small></div>
+          <button class="btn btn-y" id="send" type="button">
+            <svg class="wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4c-1-1.6-1.5-3.4-1.5-5.2C2.2 6.6 6.6 2.2 12 2.2c2.6 0 5.1 1 6.9 2.9 1.8 1.8 2.9 4.3 2.9 6.9 0 5.4-4.4 9.8-9.8 9.8z"/></svg>
+            <span data-i="su.send"></span>
+          </button>
+          <p class="msg" id="sMsg"></p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section id="guide">
+    <div class="wrap">
+      <div class="head"><h2 class="cond" data-i="gd.h"></h2></div>
+      <table class="guide">
+        <tr><td>C12/15</td><td data-i="gd.r1"></td><td></td></tr>
+        <tr class="on"><td>C20/25</td><td data-i="gd.r2"></td><td><a class="btn btn-y" href="#order" data-pick="c2025" data-i="pr.order"></a></td></tr>
+        <tr class="on"><td>C25/30</td><td data-i="gd.r3"></td><td><a class="btn btn-y" href="#order" data-pick="c2530" data-i="pr.order"></a></td></tr>
+        <tr><td>C30/37</td><td data-i="gd.r4"></td><td></td></tr>
+      </table>
+      <p class="gnote" data-i="gd.n"></p>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap split">
+      <img src="img/pier-dawn.webp" alt="Stone Crusher truck on the pier at dawn" loading="lazy">
+      <div>
+        <h2 class="cond" data-i="ar.h"></h2>
+        <p data-i="ar.p"></p>
+        <div class="areas" id="areaList"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="crew">
+    <img src="img/team.webp" alt="The Stone Crusher crew in their yellow shirts" loading="lazy">
+    <div class="wrap">
+      <h2 class="cond" data-i="cr.h"></h2>
+      <p data-i="cr.p"></p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="head"><h2 class="cond" data-i="ct.h"></h2><p>Kaya Industria Suit 6, Kralendijk, Bonaire</p></div>
+      <div class="contact">
+        <a class="cc" href="tel:+5997178728"><strong>+599 717 8728</strong><span data-i="ct.call"></span></a>
+        <a class="cc" id="ccWa" href="#"><strong>WhatsApp</strong><span data-i="ct.wa"></span></a>
+        <a class="cc" href="mailto:info@stonecrushernv.com"><strong>info@stonecrushernv.com</strong><span data-i="ct.mail"></span></a>
+      </div>
+      <div class="map"><iframe title="Map: Kaya Industria, Kralendijk" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-68.2850%2C12.1350%2C-68.2550%2C12.1600&amp;layer=mapnik"></iframe></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="img/logo.png" alt="Stone Crusher N.V." width="116" height="54" loading="lazy">
+    <span class="motto">Work smarter. Not harder.</span>
+    <span><a href="office.html" data-i="ft.office"></a> &middot; <span data-i="ft.by"></span></span>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+<script>
+(function () {
+  const $ = id => document.getElementById(id);
+  const AREAS = ['Kralendijk', 'Playa', 'Hato', 'Antriol', 'Nikiboko', 'Noord Salinja', 'Tera Kora', 'Belnem', 'Sabadeco', 'Santa Barbara', 'Lagun', 'Lima', 'Sorobon', 'Rincon'];
+  const LANG_LABEL = { pap: 'PAP', nl: 'NL', en: 'EN', es: 'ES' };
+  let S = SC.load();
+  const today = SC.ymd(new Date());
+  const st = { prod: null, qty: '', date: null, pump: false, area: 'Kralendijk' };
+  let view = new Date(); view.setDate(1);
+
+  const prod = () => S.products.find(p => p.id === st.prod);
+  const unitLabel = p => SC.t(p && p.unit === 'bag' ? 'u.bag' : 'u.m3').replace(/^(per|pa|por) /, '');
+  const qtyText = p => st.qty ? `${st.qty} ${p && p.unit === 'bag' ? unitLabel(p) : 'm³'}` : '–';
+
+  /* status */
+  function renderStatus() {
+    const s = S.status;
+    $('status').dataset.mode = s.mode;
+    $('stMode').textContent = SC.t('st.' + s.mode);
+    $('stNote').textContent = s.note ? '· ' + s.note : '';
+    if (today <= S.cutoff) { $('stCut').innerHTML = '· ' + SC.t('st.cutoff', { d: '<b>' + SC.fmtDate(S.cutoff, { day: 'numeric', month: 'long' }) + '</b>' }); }
+    else $('stCut').textContent = '';
+    const np = SC.nextPumpFree(S);
+    $('tdPump').textContent = np ? SC.fmtDate(np) : '–';
+    $('tdUpd').textContent = SC.fmtDate(S.pricesUpdated);
+    $('tdCut').textContent = SC.fmtDate(S.cutoff, { day: 'numeric', month: 'long' });
+  }
+
+  function renderLangs() {
+    $('langs').innerHTML = SC.langs.map(l => `<button type="button" data-l="${l}" aria-pressed="${l === SC.lang}">${LANG_LABEL[l]}</button>`).join('');
+  }
+  $('langs').addEventListener('click', e => { const b = e.target.closest('button'); if (b) SC.setLang(b.dataset.l); });
+
+  /* prices */
+  function renderPrices() {
+    $('priceGrid').innerHTML = S.products.map(p => {
+      const img = p.img ? `style="background-image:url(img/${p.img}.webp)"` : '';
+      const amt = p.price != null
+        ? `<div class="amt">${SC.money(p.price)}<small>${SC.t(p.unit === 'bag' ? 'u.bag' : 'u.m3')}</small></div>`
+        : `<div class="amt ask">${SC.t('pr.ask')}</div>`;
+      return `<article class="pc">
+        <div class="ph ${p.img ? '' : 'none'}" ${img} data-k="${p.kind === 'bag' ? 'Argos' : 'Sand'}">${p.promo ? `<span class="tag">${SC.t('pr.special')}</span>` : ''}</div>
+        <div class="bd"><h3 class="cond">${p.name}</h3>
+          <div class="row">${amt}<a class="btn btn-k" href="#order" data-pick="${p.id}">${SC.t('pr.order')}</a></div></div>
+      </article>`;
+    }).join('');
+    $('prUpd').textContent = `${SC.t('today.upd')}: ${SC.fmtDate(S.pricesUpdated, { weekday: 'long', day: 'numeric', month: 'long' })}`;
+  }
+
+  /* order form */
+  function renderChips() {
+    $('prodChips').innerHTML = S.products.map(p => `<button type="button" class="chip" data-id="${p.id}" aria-pressed="${p.id === st.prod}">${p.name}</button>`).join('');
+  }
+  function pick(id) {
+    st.prod = id;
+    const p = prod();
+    if (p && p.kind !== 'concrete') st.pump = false;
+    renderChips(); syncForm(); renderSummary();
+  }
+  document.addEventListener('click', e => {
+    const a = e.target.closest('[data-pick]'); if (a) pick(a.dataset.pick);
+  });
+  $('prodChips').addEventListener('click', e => { const b = e.target.closest('.chip'); if (b) pick(b.dataset.id); });
+
+  function syncForm() {
+    const p = prod();
+    const bag = p && p.unit === 'bag';
+    $('qUnit').textContent = p ? (bag ? unitLabel(p) : 'm³') : 'm³';
+    $('qty').step = bag ? 1 : 0.5;
+    $('calc').hidden = !!bag;
+    $('pumpRow').hidden = !(p && p.kind === 'concrete');
+    $('pump').checked = st.pump;
+    $('pumpWarn').hidden = !(st.pump && st.date && SC.dayState(S, st.date) === 'pump');
+    $('sPumpRow').hidden = !(p && p.kind === 'concrete');
+  }
+
+  function step(dir) {
+    const p = prod(); const inc = p && p.unit === 'bag' ? 1 : 0.5;
+    const v = Math.max(0, (parseFloat(st.qty) || 0) + dir * inc);
+    st.qty = v ? String(v) : ''; $('qty').value = st.qty; renderSummary();
+  }
+  $('qMinus').onclick = () => step(-1);
+  $('qPlus').onclick = () => step(1);
+  $('qty').oninput = e => { st.qty = e.target.value; renderSummary(); };
+  ['cL', 'cW', 'cT'].forEach(id => $(id).addEventListener('input', () => {
+    const L = parseFloat($('cL').value), W = parseFloat($('cW').value), T = parseFloat($('cT').value);
+    if (L > 0 && W > 0 && T > 0) {
+      const m3 = Math.ceil(L * W * (T / 100) * 1.05 * 2) / 2;
+      st.qty = String(m3); $('qty').value = st.qty; renderSummary();
+    }
+  }));
+
+  /* calendar */
+  function renderCal() {
+    const y = view.getFullYear(), m = view.getMonth();
+    $('calMonth').textContent = SC.monthName(y, m);
+    const first = new Date(y, m, 1);
+    const lead = (first.getDay() + 6) % 7;
+    const days = new Date(y, m + 1, 0).getDate();
+    let h = SC.dayNames().map(d => `<span class="dn">${d}</span>`).join('');
+    for (let i = 0; i < lead; i++) h += '<span></span>';
+    for (let d = 1; d <= days; d++) {
+      const iso = SC.ymd(new Date(y, m, d));
+      const past = iso <= today;
+      const ds = SC.dayState(S, iso);
+      const cls = past ? 'past' : ds;
+      const lbl = past ? '' : SC.t(ds === 'free' ? 'or.free' : ds === 'pump' ? 'or.pumpb' : 'or.closed');
+      h += `<button type="button" class="${cls}" data-d="${iso}" aria-pressed="${iso === st.date}" ${past || ds === 'closed' ? 'disabled' : ''} title="${lbl}" aria-label="${d} ${lbl}">${d}</button>`;
+    }
+    $('cal').innerHTML = h;
+    const now = new Date(); $('calPrev').disabled = y === now.getFullYear() && m === now.getMonth();
+  }
+  $('calPrev').onclick = () => { view.setMonth(view.getMonth() - 1); renderCal(); };
+  $('calNext').onclick = () => { view.setMonth(view.getMonth() + 1); renderCal(); };
+  $('cal').addEventListener('click', e => {
+    const b = e.target.closest('button[data-d]'); if (!b || b.disabled) return;
+    st.date = b.dataset.d; renderCal(); syncForm(); renderSummary();
+  });
+  $('pump').onchange = e => { st.pump = e.target.checked; syncForm(); renderSummary(); };
+
+  /* where */
+  $('area').innerHTML = AREAS.map(a => `<option>${a}</option>`).join('');
+  $('area').onchange = e => { st.area = e.target.value; renderSummary(); };
+  $('areaList').innerHTML = AREAS.map(a => `<span>${a}</span>`).join('');
+
+  /* summary */
+  function ready() { return st.prod && parseFloat(st.qty) > 0 && st.date && !(st.pump && SC.dayState(S, st.date) === 'pump'); }
+  function renderSummary() {
+    const p = prod();
+    $('sProd').textContent = p ? p.name : '–';
+    $('sQty').textContent = qtyText(p);
+    $('sDate').textContent = st.date ? SC.fmtDate(st.date, { weekday: 'long', day: 'numeric', month: 'long' }) : '–';
+    $('sPump').textContent = SC.t(st.pump ? 'su.yes' : 'su.no');
+    $('sArea').textContent = st.area;
+    const q = parseFloat(st.qty) || 0;
+    if (p && p.price != null && q) { $('sEst').textContent = SC.money(p.price * q); $('sEstN').textContent = SC.t('su.estn'); }
+    else { $('sEst').textContent = '–'; $('sEstN').textContent = p ? SC.t('su.ask') : ''; }
+    $('send').disabled = !ready();
+    $('sMsg').textContent = ready() ? '' : SC.t('su.miss');
+  }
+
+  $('send').onclick = () => {
+    if (!ready()) return;
+    const p = prod();
+    S = SC.load();
+    const ref = 'SC-' + (1041 + S.orders.length);
+    const q = parseFloat(st.qty);
+    const order = {
+      ref, at: new Date().toISOString(), prod: p.id, name: p.name, unit: p.unit, qty: q, date: st.date, pump: st.pump,
+      area: st.area, addr: $('addr').value.trim(), who: $('name').value.trim(), phone: $('phone').value.trim(),
+      note: $('note').value.trim(), est: p.price != null ? p.price * q : null, lang: SC.lang, state: 'new'
+    };
+    S.orders.unshift(order);
+    if (st.pump && !S.pump.includes(st.date)) S.pump.push(st.date);
+    SC.save(S);
+    const lines = [
+      `${SC.t('su.t')} ${ref}`,
+      `${SC.t('su.prod')}: ${p.name}`,
+      `${SC.t('su.qty')}: ${qtyText(p)}`,
+      `${SC.t('su.date')}: ${SC.fmtDate(st.date, { weekday: 'long', day: 'numeric', month: 'long' })}`,
+      p.kind === 'concrete' ? `${SC.t('su.pump')}: ${SC.t(st.pump ? 'su.yes' : 'su.no')}` : null,
+      `${SC.t('su.area')}: ${st.area}${order.addr ? ', ' + order.addr : ''}`,
+      order.who ? `${SC.t('or.name')}: ${order.who}` : null,
+      order.phone ? `${SC.t('or.phone')}: ${order.phone}` : null,
+      order.note ? `${SC.t('or.note')} ${order.note}` : null,
+      order.est != null ? `${SC.t('su.est')}: ${SC.money(order.est)}` : null
+    ].filter(Boolean).join('\n');
+    window.open(SC.wa(lines), '_blank', 'noopener');
+    $('sMsg').textContent = SC.t('su.ok', { r: ref });
+    renderStatus(); renderCal();
+  };
+
+  $('ccWa').href = SC.wa('Hi Stone Crusher, ');
+
+  function renderAll() {
+    SC.applyI18n(); renderLangs(); renderStatus(); renderPrices(); renderChips(); syncForm(); renderCal(); renderSummary();
+  }
+  document.addEventListener('langchange', renderAll);
+  window.addEventListener('storage', e => { if (e.key === 'sc-desk-v1') { S = SC.load(); renderAll(); } });
+  renderAll();
+})();
+</script>
+</body>
+</html>
